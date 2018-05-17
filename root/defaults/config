@@ -1,0 +1,9 @@
+Host docker-tunnel-host
+        HostName      ssh.example.com
+        User          myusername
+        Port          22
+        IdentityFile  /config/.ssh/ed25519-docker
+        LocalForward  127.0.0.1:1180 localhost:80
+        DynamicForward 0.0.0.0:8080
+        ServerAliveInterval 30
+        ServerAliveCountMax 3
