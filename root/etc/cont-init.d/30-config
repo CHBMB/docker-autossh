@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+
+#make our folders and links
+mkdir -p \
+        /config/{.ssh} \
+
+# Test for ssh key and create if not found
+[[ ! -e /config/.ssh/ed25519-docker ]] && \
+        ssh-keygen -N '' -C '' -f /config/.ssh/ed25519-docker -t ed25519
+
+# Check if ssh config exists in /config, copy if not
+[[ ! -e /config/.ssh/config ]] && \
+        cp /defaults/config /config/.ssh/config
+
+# permissions
+chown abc:abc -R \
+        /config
+chmod u+rw \
+        /config/.ssh/config
