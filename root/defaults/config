@@ -7,3 +7,4 @@ Host docker-tunnel-host
         DynamicForward 0.0.0.0:8080
         ServerAliveInterval 30
         ServerAliveCountMax 3
+        StrictHostKeyChecking no
