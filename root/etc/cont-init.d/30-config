@@ -2,7 +2,7 @@
 
 #make our folders and links
 mkdir -p \
-        /config/{.ssh} \
+        /config/.ssh
 
 # Test for ssh key and create if not found
 [[ ! -e /config/.ssh/ed25519-docker ]] && \
